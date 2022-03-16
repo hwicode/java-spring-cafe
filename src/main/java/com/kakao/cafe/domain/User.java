@@ -2,9 +2,10 @@ package com.kakao.cafe.domain;
 
 import com.kakao.cafe.controller.UserForm;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class User {
+public class User implements Serializable {
 
     private final String userId;
     private final String password;
