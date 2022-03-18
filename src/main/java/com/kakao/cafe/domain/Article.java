@@ -8,12 +8,14 @@ public class Article {
     private final String title;
     private final String contents;
     private final int articleId;
+    private final String createdTime;
 
-    public Article(ArticleForm articleForm, int articleId) {
+    public Article(ArticleForm articleForm, int articleId, String createdTime) {
         this.writer = articleForm.getWriter();
         this.title = articleForm.getTitle();
         this.contents = articleForm.getContents();
         this.articleId = articleId;
+        this.createdTime = createdTime;
     }
 
     public String getWriter() {
@@ -26,6 +28,10 @@ public class Article {
 
     public String getContents() {
         return contents;
+    }
+
+    public String getCreatedTime() {
+        return createdTime;
     }
 
     public boolean isCorrectId(int id) {

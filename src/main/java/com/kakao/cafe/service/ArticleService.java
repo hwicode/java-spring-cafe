@@ -19,9 +19,7 @@ public class ArticleService {
      * 게시글 작성하기
      */
     public Article write(ArticleForm articleForm) {
-        int articleId = articleRepository.size() + 1;
-        Article article = new Article(articleForm, articleId);
-        return articleRepository.save(article);
+        return articleRepository.save(articleForm);
     }
 
     /**
