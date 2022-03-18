@@ -39,7 +39,7 @@ public class ArticleService {
 
     private Article validateNull(Optional<Article> optionalArticle) {
         return optionalArticle.orElseThrow(() -> {
-            throw new IllegalStateException("존재하지 않는 회원입니다.");
+            throw new IllegalStateException("존재하지 않는 게시물입니다.");
         });
     }
 }

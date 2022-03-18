@@ -2,6 +2,8 @@ package com.kakao.cafe.domain;
 
 import com.kakao.cafe.controller.ArticleForm;
 
+import java.util.Objects;
+
 public class Article {
 
     private final String writer;
@@ -34,10 +36,31 @@ public class Article {
         return createdTime;
     }
 
+    public int getArticleId() {
+        return articleId;
+    }
+
     public boolean isCorrectId(int id) {
         if (articleId == id) {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Article article = (Article) o;
+        return articleId == article.articleId
+                && Objects.equals(writer, article.writer)
+                && Objects.equals(title, article.title)
+                && Objects.equals(contents, article.contents)
+                && Objects.equals(createdTime, article.createdTime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(writer, title, contents, articleId, createdTime);
     }
 }
